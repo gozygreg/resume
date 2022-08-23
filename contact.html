@@ -17,17 +17,6 @@
     <script type="text/javascript">
         (function () {
             emailjs.init("QD6GXvwkmqztJARPL");
-            var templateParams = {
-                name: 'Greg',
-                notes: 'Check this out!'
-            };
-
-            emailjs.send('service_r9t9f0i', 'greg', templateParams)
-                .then(function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                }, function (error) {
-                    console.log('FAILED...', error);
-                });
         })();
     </script>
     <title>Greg Nnabuife</title>
@@ -85,7 +74,7 @@
                 <h5 class="uppercase text-center">Let's work together!</h5>
 
                 <div class="center-form">
-                    <form>
+                    <form onsubmit="return sendMail(this);">
                         <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required>
                         <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
                             required>
@@ -164,6 +153,7 @@
         </div>
 
     </footer>
+    <script src="assets/js/sendEmail.js"></script>
 </body>
 
 </html>
